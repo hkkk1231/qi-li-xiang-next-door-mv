@@ -1,0 +1,14 @@
+node_modules/
+out/
+.cache/
+public/audio/*
+!public/audio/README.md
+*.flac
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.mkv
+*.tgz
+.DS_Store
+Thumbs.db

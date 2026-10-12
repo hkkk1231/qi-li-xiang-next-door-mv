@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>七里香 · 隔壁</title>
+<style>
+  @font-face { font-family: "QLX Kai"; src: url("public/fonts/qlx-kai-medium.ttf") format("truetype"); font-display: block; }
+  html, body { margin: 0; background: #1b1820; color: #eee; font: 13px system-ui, sans-serif; }
+  main { padding: 12px; display: grid; gap: 8px; }
+  #out { width: min(100%, 1280px); aspect-ratio: 16 / 9; height: auto; background: #F3EBDC; }
+  .p5Canvas { display: none !important; }
+  .bar { display: flex; gap: 10px; align-items: center; max-width: 1280px; }
+  #scrub { flex: 1; }
+  #tt { font-variant-numeric: tabular-nums; min-width: 190px; }
+</style>
+<script src="node_modules/p5/lib/p5.min.js"></script>
+<script src="node_modules/p5.brush/dist/p5.brush.js"></script>
+</head>
+<body>
+<main>
+  <canvas id="out" width="1920" height="1080"></canvas>
+  <div class="bar"><input id="scrub" type="range" min="0" max="299" step="0.0417" value="0"><span id="tt">loading…</span></div>
+</main>
+<!-- engine (ClaudeAnimationBase, MIT: src/LICENSE-ClaudeAnimationBase.txt), extended for this film -->
+<script src="src/config.js"></script>
+<script src="src/core.js"></script>
+<script src="src/clawd.js"></script>
+<script src="src/timeline.js"></script>
+<!-- the film's cast, set and subtitles -->
+<script src="src/heroine.js"></script>
+<script src="src/props.js"></script>
+<script src="src/world.js"></script>
+<script src="src/weather.js"></script>
+<script src="src/lyrics.js"></script>
+<script src="src/subtitles.js"></script>
+<!-- model sheets (standalone loops) -->
+<script src="src/sheets.js"></script>
+<!-- the film: one continuous song timeline; each stage adds its scene file, in order -->
+<script src="src/scenes/stage-01-moving-day.js"></script>
+<script src="src/scenes/stage-02-fan-and-storm.js"></script>
+<script src="src/scenes/stage-03-windows-and-seasons.js"></script>
+<script src="src/scenes/stage-04-trip-and-return.js"></script>
+<script src="src/scenes/stage-05-together.js"></script>
+<script>
+  // studio.html?loop=cast (or another loop) scrubs a standalone loop instead of the film; ?t=12.5 jumps to a time.
+  const q = new URLSearchParams(location.search).get('loop'); if (q && LOOPS[q]) window.LOOP = LOOPS[q];
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "qi-li-xiang-everyday",
+  "version": "0.1.0",
+  "private": false,
+  "description": "七里香《隔壁》：使用 p5.js 与 p5.brush 编写的手绘动画 MV 源码",
+  "license": "MIT",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ffmpeg-static": "5.3.0",
+    "p5": "2.3.3",
+    "p5.brush": "2.2.3",
+    "puppeteer-core": "24.43.1"
+  }
+}
